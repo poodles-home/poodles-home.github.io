@@ -11,6 +11,8 @@
       background-color: #f4f4f4;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
+      /* Prevent horizontal scroll */
     }
 
     .navbar {
@@ -175,7 +177,9 @@
     });
 
     // Show home section by default
-    document.querySelector('#home').style.display = 'block';
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('#home').style.display = 'block';
+    });
 
     document.querySelectorAll('.gallery img').forEach(img => {
       img.addEventListener('click', function () {
