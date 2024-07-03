@@ -20,6 +20,8 @@
       overflow: auto;
       display: flex;
       justify-content: center;
+      align-items: center;
+      /* Добавлено для вертикального выравнивания */
       position: fixed;
       top: 0;
       left: 0;
@@ -32,6 +34,11 @@
       text-decoration: none;
       text-align: center;
       display: block;
+      height: 100%;
+      /* Обеспечивает заполнение по высоте родителя */
+      display: flex;
+      align-items: center;
+      /* Центрирование текста внутри элементов */
     }
 
     .navbar a:hover {
