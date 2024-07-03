@@ -2,11 +2,113 @@
 <html>
 
 <head>
-  <title>Scarlet Sunrise</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: #333;
+      overflow: auto;
+    }
+
+    .navbar a {
+      float: left;
+      padding: 12px;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      width: 33.33%;
+      /* Four links of equal widths */
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+      margin-top: 20px;
+    }
+
+    .card h1 {
+      margin-top: 0;
+    }
+
+    .card p {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #3498db;
+      margin-top: 10px;
+      display: inline-block;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Scarlet Sunrise будет где-то тут.</h1>
+  <div class="navbar">
+    <a href="#home">Main</a>
+    <a href="#about">About us</a>
+    <a href="#contact">Contacts</a>
+  </div>
+
+  <div id="home" class="card">
+    <h1>Scarlet Sunrise</h1>
+    <p>Puppies</p>
+    <p>Email: karpovichdi@hotmail.com</p>
+    <p>Phone: **********</p>
+    <a href="https://www.tiktok.com/@scarlet_sunrise9" target="_blank">TikTok</a>
+  </div>
+
+  <div id="about" class="card" style="display: none;">
+    <h1>About us</h1>
+    <p>Some information about kennel</p>
+  </div>
+
+  <div id="contact" class="card" style="display: none;">
+    <h1>Contacts</h1>
+    <p>Email: karpovichdi@hotmail.com</p>
+    <p>Phone: +*********</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.navbar a').forEach(link => {
+      link.addEventListener('click', function () {
+        document.querySelectorAll('.card').forEach(card => {
+          card.style.display = 'none';
+        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.style.display = 'block';
+        }
+      });
+    });
+
+    // Show home section by default
+    document.querySelector('#home').style.display = 'block';
+  </script>
 </body>
 
 </html>
