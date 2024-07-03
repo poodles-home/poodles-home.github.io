@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -179,6 +179,7 @@
     // Show home section by default
     document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('#home').style.display = 'block';
+      window.scrollTo(0, document.body.scrollHeight);
     });
 
     document.querySelectorAll('.gallery img').forEach(img => {
